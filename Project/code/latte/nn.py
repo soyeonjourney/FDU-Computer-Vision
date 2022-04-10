@@ -42,9 +42,9 @@ class Module:
         self.training = True
 
     def load(self, filename: str) -> None:
-        import pickle
-
-        self._params = pickle.load(open(filename, 'rb'))
+        data_list = np.load(filename)
+        for param, data in zip(self.parameters(), data_list):
+            param.data = data
 
 
 class Linear(Module):

@@ -241,12 +241,12 @@ def sum_to_shape(array: np.ndarray, shape: Tuple[int, ...]) -> np.ndarray:
 #########################################################################################
 
 
-import pickle
-
-
-def save(params_list: List['Tensor'], filename: str) -> None:
+def save(param_list: List['Tensor'], filename: str) -> None:
     """
     Saves the parameters of a list of tensors to a file.
     """
-    with open(filename, 'wb') as f:
-        pickle.dump(params_list, f)
+    data_list = []
+    for param in param_list:
+        data_list.append(param.data)
+
+    np.save(filename, data_list)
