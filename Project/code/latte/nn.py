@@ -42,9 +42,9 @@ class Module:
         self.training = True
 
     def load(self, filename: str) -> None:
-        data_list = np.load(filename)
-        for param, data in zip(self.parameters(), data_list):
-            param.data = data
+        with open(filename, 'rb') as f:
+            for param in self.parameters():
+                param.data = np.load(f)
 
 
 class Linear(Module):

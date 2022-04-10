@@ -245,8 +245,6 @@ def save(param_list: List['Tensor'], filename: str) -> None:
     """
     Saves the parameters of a list of tensors to a file.
     """
-    data_list = []
-    for param in param_list:
-        data_list.append(param.data)
-
-    np.save(filename, data_list)
+    with open(filename, 'wb') as f:
+        for param in param_list:
+            np.save(f, param.data)
