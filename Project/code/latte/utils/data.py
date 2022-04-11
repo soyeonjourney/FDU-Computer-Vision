@@ -82,5 +82,5 @@ class DataLoader:
 
             return batch_data, batch_labels
 
-    def next(self):
-        return self.__next__()
+    def __len__(self) -> int:
+        return self.max_iter
