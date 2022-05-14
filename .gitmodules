@@ -1,0 +1,4 @@
+[submodule "Project-Mid"]
+	path = Project-Mid
+	url = https://github.com/Bbbstin/CV_Midterm
+	branch = main
