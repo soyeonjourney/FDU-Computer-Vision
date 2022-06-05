@@ -2,3 +2,7 @@
 	path = Project-Mid
 	url = https://github.com/Bbbstin/CV_Midterm
 	branch = main
+[submodule "Project-Final"]
+	path = Project-Final
+	url = https://github.com/Tequila-Sunrise/FDU-Computer-Vision-Final.git
+	branch = main
